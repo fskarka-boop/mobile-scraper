@@ -31,8 +31,7 @@ def send_message(text):
 
 
 def check_new_listings():
-    send_message("Test: scraper běží a Telegram funguje!")
-
+   
     response = requests.get(URL, headers={"User-Agent": "Mozilla/5.0"})
     soup = BeautifulSoup(response.text, "html.parser")
 
