@@ -24,4 +24,9 @@ jobs:
       - name: Run script
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-        run: python main.py
+        run: |
+  python main.py
+  curl -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage" \
+       -d chat_id=1076519369 \
+       -d text="Testovací zpráva: GitHub Actions funguje!"
+
